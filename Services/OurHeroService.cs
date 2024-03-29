@@ -7,9 +7,10 @@ namespace WebAPITest.Services
         private readonly List<OurHero> _ourHeroesList;
         public OurHeroService() 
         {
-            _ourHeroesList = new List<OurHero>();
+            _ourHeroesList = new List<OurHero>()
             {
-                new OurHero(){
+                new OurHero()
+                {
                     Id = 1,
                     FirstName = "Test",
                     LastName = "",
