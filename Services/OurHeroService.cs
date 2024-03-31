@@ -2,7 +2,7 @@
 
 namespace WebAPITest.Services
 {
-    public class OurHeroService
+    public class OurHeroService : IOurHeroService
     {
         private readonly List<OurHero> _ourHeroesList;
         public OurHeroService() 
@@ -47,7 +47,7 @@ namespace WebAPITest.Services
         public OurHero? UpdateOurHero(int id, AddUpdateOurHero obj)
         {
             var ourHeroIndex = _ourHeroesList.FindIndex(index => index.Id == id);
-            if(ourHeroIndex == 0)
+            if(ourHeroIndex >= 0)
             {
                 var hero = _ourHeroesList[ourHeroIndex];
 
@@ -67,7 +67,7 @@ namespace WebAPITest.Services
         public bool DeleteHerosByID(int id)
         {
             var ourHeroIndex = _ourHeroesList.FindIndex(index => index.Id == id);
-            if (ourHeroIndex == 0)
+            if (ourHeroIndex >= 0)
             {
                 _ourHeroesList.RemoveAt(ourHeroIndex);
             }
