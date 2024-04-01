@@ -4,9 +4,9 @@ namespace WebAPITest.Services
 {
     public interface IOurHeroService
     {
-        List<OurHero> GetAllHeros(bool? isActive);
+        List<OurHero> GetAllHeroes(bool? isActive);
 
-        OurHero? GetHerosByID(int id);
+        OurHero? GetHeroesByID(int id);
 
         OurHero AddOurHero(AddUpdateOurHero obj);
 

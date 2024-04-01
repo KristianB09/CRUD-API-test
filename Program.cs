@@ -2,6 +2,10 @@ using WebAPITest.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//*********************** Add services to the container.***********************
+builder.Services.AddSingleton<IOurHeroService, OurHeroService>();
+//*********************** Add services to the container end.***********************
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -25,7 +29,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-//*********************** Add services to the container.***********************
-builder.Services.AddSingleton<IOurHeroService, OurHeroService>();
-//*********************** Add services to the container end.***********************
